@@ -19,7 +19,7 @@
     "monitor"
   ],
   "icon": "images/icon.png",
-  "repository": "https://github.com/njzydark/vscode-stats-bar.git",
+  "repository": "https://github.com/a-little-cat/vscode-stats-bar.git",
   "main": "./out/extension.js",
   "activationEvents": [
     "onStartupFinished"
@@ -54,7 +54,8 @@
             "default": [
               "cpuLoad",
               "networkSpeed",
-              "memoUsage"
+              "memoUsage",
+              "gpuLoad"
             ],
             "minItems": 0,
             "maxItems": 5,
@@ -66,7 +67,8 @@
                 "loadavg",
                 "networkSpeed",
                 "memoUsage",
-                "uptime"
+                "uptime",
+                "gpuLoad"
               ]
             },
             "markdownDescription": "Control the modules to be enabled and the display order (You can drag the item to control the order)"
@@ -88,31 +90,37 @@
             "type": "string",
             "scope": "machine-overridable",
             "default": "$(pulse) ${percent}%",
-            "markdownDescription": "You can use these variables to custom display format: `${percent}` or visit [doc](https://github.com/njzydark/vscode-stats-bar#display-format) to see detail (e.g. how use icon)"
+            "markdownDescription": "You can use these variables to custom display format: `${percent}` or visit [doc](https://github.com/a-little-cat/vscode-stats-bar#display-format) to see detail (e.g. how use icon)"
           },
           "statsBar.loadavg.format": {
             "type": "string",
             "scope": "machine-overridable",
             "default": "${1}, ${5}, ${15}",
-            "markdownDescription": "You can use these variables to custom display format: `${1}` `${5}` `${15}` or visit [doc](https://github.com/njzydark/vscode-stats-bar#display-format) to see detail (e.g. how use icon)"
+            "markdownDescription": "You can use these variables to custom display format: `${1}` `${5}` `${15}` or visit [doc](https://github.com/a-little-cat/vscode-stats-bar#display-format) to see detail (e.g. how use icon)"
           },
           "statsBar.networkSpeed.format": {
             "type": "string",
             "scope": "machine-overridable",
             "default": "$(arrow-up) ${up} ${up-unit} $(arrow-down) ${down} ${down-unit}",
-            "markdownDescription": "You can use these variables to custom display format: `${up}` `${up-unit}` `${down}` `${down-unit}` or visit [doc](https://github.com/njzydark/vscode-stats-bar#display-format) to see detail (e.g. how use icon)"
+            "markdownDescription": "You can use these variables to custom display format: `${up}` `${up-unit}` `${down}` `${down-unit}` or visit [doc](https://github.com/a-little-cat/vscode-stats-bar#display-format) to see detail (e.g. how use icon)"
           },
           "statsBar.memoUsage.format": {
             "type": "string",
             "scope": "machine-overridable",
             "default": "$(database) ${used}/${total} ${unit}, ${percent}%",
-            "markdownDescription": "You can use these variables to custom display format: `${used}` `${total}` `${unit}` `${percent}` `${pressurePercent}` or visit [doc](https://github.com/njzydark/vscode-stats-bar#display-format) to see detail (e.g. how use icon)"
+            "markdownDescription": "You can use these variables to custom display format: `${used}` `${total}` `${unit}` `${percent}` `${pressurePercent}` or visit [doc](https://github.com/a-little-cat/vscode-stats-bar#display-format) to see detail (e.g. how use icon)"
           },
           "statsBar.uptime.format": {
             "type": "string",
             "scope": "machine-overridable",
             "default": "${days}d, ${hours}h, ${minutes}m",
-            "markdownDescription": "You can use these variables to custom display format: `${days}` `${hours}` `${minutes}` or visit [doc](https://github.com/njzydark/vscode-stats-bar#display-format) to see detail (e.g. how use icon)"
+            "markdownDescription": "You can use these variables to custom display format: `${days}` `${hours}` `${minutes}` or visit [doc](https://github.com/a-little-cat/vscode-stats-bar#display-format) to see detail (e.g. how use icon)"
+          },
+          "statsBar.gpuload.format": {
+            "type": "string",
+            "scope": "machine-overridable",
+            "default": "$(game) ${percent}% ${used}/${total} ${unit}",
+            "markdownDescription": "You can use these variables to custom display format: `$(game) ${percent}% ${used}/${total} ${unit}` or visit [doc](https://github.com/a-little-cat/vscode-stats-bar#display-format) to see detail (e.g. how use icon)"
           }
         }
       }
@@ -258,18 +266,19 @@
     "eslint-plugin-prettier": "^3.4.1",
     "glob": "^7.1.7",
     "husky": "^7.0.2",
-    "mocha": "^8.4.0",
+    "mocha": "^10.7.3",
     "prettier": "^2.3.2",
-    "typescript": "^4.3.2",
+    "typescript": "^4.9.5",
     "vscode-test": "^1.5.2"
   },
   "dependencies": {
-    "systeminformation": "5.12.3"
+    "systeminformation": "5.23.5",
+    "vsce": "^2.15.0"
   },
   "bugs": {
-    "url": "https://github.com/njzydark/vscode-stats-bar/issues"
+    "url": "https://github.com/a-little-cat/vscode-stats-bar/issues"
   },
-  "homepage": "https://github.com/njzydark/vscode-stats-bar#readme",
+  "homepage": "https://github.com/a-little-cat/vscode-stats-bar#readme",
   "author": "njzy",
   "license": "MIT"
 }
